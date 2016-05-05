@@ -9,3 +9,19 @@ Apps to build (Apps are parts of the website)
 8.
 9.
 10.
+
+
+Notes Learned:
+The code is the driving factor in the relationship with the database.
+Make changes in the code and to have it relected in the database the the following:
+
+1 -> python3 manage.py makemigrations music
+      - This creates the required table structure in my database as specified in the music app
+
+2 -> python3 manage.py migrate
+      - Syncs up the database and the code
+
+
+python3 manage.py sqlmigrate music 0001
+ - Makes a migration file. If you run into errors with DB make sure it's synced with the code/apps
+ - You must then run 'python3 manage.py migrate' again to migrate via the new migration file
